@@ -27,7 +27,7 @@ const Navbar = () => {
           }}
         />
       </Link>
-      <Stack direction="row" gap="40px" fontSize="24px" alignItems="flex-end">
+      <Stack direction="row" gap="21px" fontSize="24px" alignItems="flex-end">
         <Link
           to="/"
           style={{
@@ -39,8 +39,8 @@ const Navbar = () => {
           Home
         </Link>
         <a
-          href="#exercises"
-          style={{ textDecoration: "none", color: "#3A1212" }}
+          href="#exercises" 
+          style={{ textDecoration: "none", color: "#3A1212"}}
         >
           Exercise
         </a>
