@@ -35,6 +35,7 @@ const paginate = (event, value) => {
         setExercises(exercisesData);
     }
     fetchExercisesData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[bodyPart]);
   return (
     <Box id="exercises" sx={{ mt: { lg: "109px" } }} mt="50px" p="20px">
