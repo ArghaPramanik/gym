@@ -34,7 +34,7 @@ const paginate = (event, value) => {
 
         setExercises(exercisesData);
     }
-    fetchExercisesData();
+    fetchExercisesData(bodyPart,setExercises);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[bodyPart]);
   return (
