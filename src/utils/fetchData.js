@@ -21,5 +21,3 @@ export const fetchData = async (url,options)=>{
 
     return data;
 }
-
-// '8650868258mshd04de44d2f0d8f8p1afd60jsn8a33686542c7'
