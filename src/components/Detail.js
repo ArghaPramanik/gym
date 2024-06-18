@@ -7,7 +7,6 @@ import EquipmentImage from "../assets/icons/equipment.png";
 const Detail = ({ exerciseDetail }) => {
   const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
 
-
   const extraDetail = [
     {
       icon: BodyPartImage,
@@ -23,8 +22,6 @@ const Detail = ({ exerciseDetail }) => {
     },
   ];
 
-
-
   return (
     <Stack
       gap="60px"
@@ -33,20 +30,20 @@ const Detail = ({ exerciseDetail }) => {
       <img src={gifUrl} alt={name} loading="lazy" className="detail-image" />
       <Stack sx={{ gap: { lg: "35px", xs: "20px" } }}>
         <Typography variant="h3">
-        <span style={{ color: '#FF2625', textTransform: 'capitalize' }}>{name}</span>
+          <span style={{ color: '#FF2625', textTransform: 'capitalize' }}>{name}</span>
         </Typography>
         <Typography variant="h6">
-          Exercises keep you strong.<span style={{ color: '#FF2625', textTransform: 'capitalize' }}>{name}</span> {` `}
-          is one of the best exercise
-          to targer your {target} .It will help you impore your mode and gain energy.
+          Exercises keep you strong. <span style={{ color: '#FF2625', textTransform: 'capitalize' }}>{name}</span> {` `}
+          is one of the best exercises
+          to target your {target}. It will help you improve your mood and gain energy.
         </Typography>
-        {extraDetail?.map((item) => (
-          <Stack key={item.name} direction="row" gap="24px" alignItems="center" >
+        {extraDetail.map((item, index) => (
+          <Stack key={index} direction="row" gap="24px" alignItems="center">
             <Button sx={{ background: '#FFF2DB', borderRadius: '50%', width: '100px', height: '100px' }}>
-            <img src={item.icon} alt={bodyPart} style={{ width: '50px', height: '50px' }} />
-            </Button >
+              <img src={item.icon} alt={item.name} style={{ width: '50px', height: '50px' }} />
+            </Button>
             <Typography textTransform="capitalize" sx={{ fontSize: { lg: '30px', xs: '20px' } }}>
-            {item.name}
+              {item.name}
             </Typography>
           </Stack>
         ))}

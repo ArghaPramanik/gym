@@ -3,7 +3,8 @@ import { Typography, Box, Stack } from '@mui/material';
 import Loader from './Loader';
 
 const ExerciseVideos = ({ exerciseVideos, name }) => {
-  if (!exerciseVideos.length) return <Loader />;
+  // Ensure exerciseVideos is defined and is an array
+  if (!exerciseVideos || !Array.isArray(exerciseVideos) || exerciseVideos.length === 0) return <Loader />;
 
   return (
     <Box sx={{ marginTop: { lg: '203px', xs: '20px' } }} p="20px">
@@ -11,9 +12,9 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
         Watch <span style={{ color: '#FF2625', textTransform: 'capitalize' }}>{name}</span> exercise videos
       </Typography>
       <Stack sx={{ flexDirection: { lg: 'row' }, gap: { lg: '110px', xs: '0px' } }} justifyContent="flex-start" flexWrap="wrap" alignItems="center">
-        {exerciseVideos?.slice(0, 3)?.map((item, index) => (
+        {exerciseVideos.slice(0, 3).map((item) => (
           <a
-            key={index}
+            key={item.video.videoId} 
             className="exercise-video"
             href={`https://www.youtube.com/watch?v=${item.video.videoId}`}
             target="_blank"
